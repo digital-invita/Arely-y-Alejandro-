@@ -23,12 +23,12 @@
   },
   "event": {
     "label": "Nuestra Boda",
-    "celebrantName": "Nombre & Nombre",
-    "eventDate": "2026-07-04T19:30",
-    "eventEnd": "2026-07-05T02:00",
+    "celebrantName": "Arely & Alejandro",
+    "eventDate": "2026-07-25T18:00",
+    "eventEnd": "2026-07-25T11:59",
     "timeZone": "America/Mexico_City",
     "eventLocation": "Lugar de la recepción",
-    "rsvpPhone": "871 221 47 46"
+    "rsvpPhone": "‪+52 844 196 8271‬"
   },
   "theme": {
     "bgTop": "#fffaf2",
@@ -64,53 +64,58 @@
     "showImage": true
   },
   "family": {
-    "parentsEyebrow": "Con la bendición de nuestras familias",
-    "parentsNamesHtml": "Familia de la novia<br>&amp;<br>Familia del novio",
-    "parentsInviteText": "Tenemos el honor de invitarte a celebrar nuestra boda.",
+    "parentsEyebrow": "Con la bendición de nuestros padres",
+    "parentsNamesHtml": "Juana Galvan Arellano<br>&<br>Juan Regalado Aldape<br>-<br>Lidia Alvarado Martinez<br>&<br>Alejandro de la Cruz Ortiz ",
+    "parentsInviteText": "Tenemos el honor de invitarles a celebrar nuestra unión en matrimonio.",
     "godparentsEyebrow": "Nuestros padrinos",
     "godparentsNamesHtml": "Nombre de padrinos<br>&amp;<br>Nombre de padrinos"
   },
   "ceremony": {
     "title": "Ceremonia",
-    "time": "19:30 hrs",
-    "place": "Lugar de la ceremonia",
+    "time": "18:00 hrs",
+    "place": "Parroquia de San Antonio de Padua",
     "mediaMode": "icon",
     "iconSrc": "cereminia.png",
     "mapEmbed": "",
     "photoSrc": "",
-    "mapLink": "https://maps.app.goo.gl/H6vG5pnkKAdFnoUi8"
+    "mapLink": "https://maps.app.goo.gl/BXU7BTKRjmXbXzg88"
   },
   "reception": {
     "title": "Recepción",
-    "time": "21:00 hrs ",
-    "place": "Lugar de la recepción",
+    "time": "20:00 hrs ",
+    "place": "Recepciones Sofia",
     "mediaMode": "icon",
     "iconSrc": "recepcion.png",
-    "mapLink": "https://maps.app.goo.gl/H6vG5pnkKAdFnoUi8",
+    "mapLink": "https://maps.app.goo.gl/h1uQUktmN2smx2Gy6",
     "mapEmbed": "",
     "photoSrc": ""
   },
   "timeline": {
     "items": [
       {
-        "time": "19:30 hrs",
-        "title": "Ceremonia",
-        "desc": "Lugar de la ceremonia"
+        "time": "16:30 hrs",
+        "title": "Ceremonia Civil ",
+        "desc": ""
       },
       {
-        "time": "21:00 hrs",
-        "title": "Recepción",
-        "desc": "Lugar de la recepción"
+        "time": "18:00 hrs",
+        "title": "Ceremonia Religiosa",
+        "desc": "Parroquia de San Antonio de Padua"
+      },
+      {
+        "time": "20:00 hrs",
+        "title": "Recepción ",
+        "desc": "Recepciones Sofia"
+      },
+      {
+        "time": "20:30 hrs",
+        "title": "Vals",
+        "desc": ""
       },
       {
         "time": "21:30 hrs",
-        "title": "Brindis",
-        "desc": "Un momento para celebrar el amor y agradecer por compartir este día."
-      },
-      {
-        "time": "22:00 hrs",
         "title": "Cena",
-        "desc": "Compartiremos la mesa con quienes forman parte de nuestra historia."
+        "desc": ""
       }
     ]
   },
@@ -121,7 +126,7 @@
   "dressCode": {
     "title": "Código de vestimenta",
     "value": "Formal",
-    "note": "Agradecemos reservar el color blanco para la novia."
+    "note": ""
   },
   "gifts": {
     "title": "Mesa de regalos",
@@ -158,13 +163,13 @@
     "enabled": true
   },
   "rsvp": {
-    "showGuestCount": false,
-    "maxGuests": 6
+    "showGuestCount": true,
+    "maxGuests": 11
   },
   "sections": {
     "story": true,
     "parents": true,
-    "godparents": true,
+    "godparents": false,
     "ceremony": true,
     "reception": true,
     "timeline": true,
@@ -174,7 +179,7 @@
     "rsvp": true,
     "gifts": true,
     "agenda": true,
-    "album": true,
+    "album": false,
     "closing": true
   },
   "style": {
