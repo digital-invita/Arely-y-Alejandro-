@@ -28,7 +28,7 @@
     "eventEnd": "2026-07-25T11:59",
     "timeZone": "America/Mexico_City",
     "eventLocation": "Lugar de la recepción",
-    "rsvpPhone": "‪528441968271‬"
+    "rsvpPhone": "‪+52 844 196 8271‬"
   },
   "theme": {
     "bgTop": "#fffaf2",
@@ -52,9 +52,7 @@
       "G1.jpg",
       "G2.jpg",
       "G3.jpg",
-      "G4.jpg",
-      "G5.jpg",
-      "G6.jpg"
+      "G4.jpg"
     ]
   },
   "story": {
