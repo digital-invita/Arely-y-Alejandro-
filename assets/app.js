@@ -2420,21 +2420,18 @@
         const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
         const url = URL.createObjectURL(blob);
 
-        if (isAppleDevice) {
-          // CORRECCIÓN iOS: Safari en iPhone/iPad es inconsistente con las
-          // blob URL para archivos .ics (a veces muestra "Safari no puede
-          // descargar este archivo" al abrirlas en una pestaña nueva).
-          // La forma confiable en iOS es usar un data URI y navegar la
-          // página actual directamente a él con window.location.href:
-          // así Safari reconoce el Content-Type "text/calendar" y abre su
-          // panel nativo de "Agregar evento" en Calendario sin intentar
-          // descargar un archivo.
-          URL.revokeObjectURL(url);
-          const base64Content = btoa(unescape(encodeURIComponent(content)));
-          const dataUrl = "data:text/calendar;charset=utf-8;base64," + base64Content;
-          window.location.href = dataUrl;
-          return true;
-        }
+if (isAppleDevice) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+    return true;
+}
 
         const link = document.createElement("a");
         link.href = url;
