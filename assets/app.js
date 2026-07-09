@@ -25,7 +25,7 @@
     "label": "Nuestra Boda",
     "celebrantName": "Arely & Alejandro",
     "eventDate": "2026-07-25T18:00",
-    "eventEnd": "2026-07-25T11:59",
+    "eventEnd": "2026-07-25T23:59",
     "timeZone": "America/Mexico_City",
     "eventLocation": "Lugar de la recepción",
     "rsvpPhone": "8441968271"
