@@ -28,7 +28,7 @@
     "eventEnd": "2026-07-25T11:59",
     "timeZone": "America/Mexico_City",
     "eventLocation": "Lugar de la recepción",
-    "rsvpPhone":"8441968271"
+    "rsvpPhone": "8441968271"
   },
   "theme": {
     "bgTop": "#fffaf2",
@@ -52,7 +52,9 @@
       "G1.jpg",
       "G2.jpg",
       "G3.jpg",
-      "G4.jpg"
+      "G4.jpg",
+      "G5.jpg",
+      "G6.jpg"
     ]
   },
   "story": {
@@ -161,7 +163,7 @@
     "enabled": true
   },
   "rsvp": {
-    "showGuestCount": true,
+    "showGuestCount": false,
     "maxGuests": 11
   },
   "sections": {
@@ -2413,10 +2415,23 @@
       return lines.join("\r\n");
     }
 
-    function downloadICSFile(filename, content) {
+    function downloadICSFile(filename, content, isAppleDevice) {
       try {
         const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
         const url = URL.createObjectURL(blob);
+
+        if (isAppleDevice) {
+          // CORRECCIÓN iOS: Safari en iPhone/iPad ignora el atributo
+          // "download" cuando el href es una blob URL, por lo que el <a>
+          // simulado no hacía nada visible. Para iOS hay que navegar
+          // directo a la blob URL: así Safari reconoce el
+          // Content-Type "text/calendar" y abre su panel nativo de
+          // "Agregar evento" en Calendario.
+          window.location.href = url;
+          setTimeout(() => URL.revokeObjectURL(url), 4000);
+          return true;
+        }
+
         const link = document.createElement("a");
         link.href = url;
         link.download = filename;
@@ -2466,7 +2481,7 @@
       const isAndroid = /Android/i.test(userAgent);
       const icsContent = buildICSFile(title, details, EVENT_LOCATION);
       const filename = `${slugifyText(eventCopy.calendarTitle)}.ics`;
-      const downloaded = downloadICSFile(filename, icsContent);
+      const downloaded = downloadICSFile(filename, icsContent, isApple);
 
       if (isApple) {
         showToast(downloaded ? "Calendario listo para Apple Calendar." : "Calendario listo. Si no se descargó, intenta de nuevo.");
