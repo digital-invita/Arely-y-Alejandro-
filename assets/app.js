@@ -2430,7 +2430,8 @@
           // panel nativo de "Agregar evento" en Calendario sin intentar
           // descargar un archivo.
           URL.revokeObjectURL(url);
-          const dataUrl = "data:text/calendar;charset=utf-8," + encodeURIComponent(content);
+          const base64Content = btoa(unescape(encodeURIComponent(content)));
+          const dataUrl = "data:text/calendar;charset=utf-8;base64," + base64Content;
           window.location.href = dataUrl;
           return true;
         }
