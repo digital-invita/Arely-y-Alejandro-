@@ -2423,11 +2423,20 @@
         if (isAppleDevice) {
           // CORRECCIÓN iOS: Safari en iPhone/iPad ignora el atributo
           // "download" cuando el href es una blob URL, por lo que el <a>
-          // simulado no hacía nada visible. Para iOS hay que navegar
-          // directo a la blob URL: así Safari reconoce el
+          // simulado no hacía nada visible. Además, navegar la página
+          // actual con window.location.href a una blob URL puede hacer
+          // que Safari muestre "no se puede descargar este archivo".
+          // La forma confiable en iOS es abrir la blob URL en una pestaña
+          // nueva (target="_blank", sin "download"): Safari reconoce el
           // Content-Type "text/calendar" y abre su panel nativo de
           // "Agregar evento" en Calendario.
-          window.location.href = url;
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "noopener";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
           setTimeout(() => URL.revokeObjectURL(url), 4000);
           return true;
         }
